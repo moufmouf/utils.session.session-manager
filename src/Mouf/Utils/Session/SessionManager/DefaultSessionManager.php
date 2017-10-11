@@ -139,7 +139,8 @@ class DefaultSessionManager implements SessionManagerInterface
         if (!empty($this->savePath)) {
             ini_set("session.save_path", $this->savePath);
         }
-
+var_dump("PHP_SAPI_NAME");
+var_dump(php_sapi_name());
         $result = session_start();
         if ($result === false) {
             throw new SessionManagerException('Failed to start the session.');
